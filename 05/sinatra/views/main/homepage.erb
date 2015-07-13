@@ -1,7 +1,7 @@
 <ul>
   <!-- Loops through all tasks in the database to display the task content -->
   <% @tasks.each do |task| %>
-    <li class="task" id="task<%= task.id %>">
+    <li class="task <%="finished" if task.done%>" id="task<%= task.id %>">
       <%= task.content %>
       <!-- 'mark done' link only shows if task.done = false -->
       <% if !task.done %>

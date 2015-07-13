@@ -27,7 +27,11 @@ for (var i=0; i < finishLinks.length; i++) {
     request.addEventListener("load", function() {
       document.getElementById("loader").remove();
       // removes the 'mark done' link
-      link.remove();
+      event.target.remove();
+
+      var task_id = event.target.getAttribute("data-task-id");
+      var dom_task_id = "task" + task_id;
+      document.getElementById(dom_task_id).classList.add("finished");
     });
 
     req.send();
