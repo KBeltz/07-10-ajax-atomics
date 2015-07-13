@@ -1,12 +1,13 @@
 var myLink = document.getElementById("clicker");
-var userInput = document.getElementById("word");
+
+var theWord = document.getElementById("word");
 
 var handleTheClick = function(event){
   var thisLink = this;
 
   var req = new XMLHttpRequest();
 
-  req.open("get", "/" + userInput.value);
+  req.open("get", "/" + theWord.value);
 
   req.addEventListener("load", function(){
     thisLink.innerText = this.response;
