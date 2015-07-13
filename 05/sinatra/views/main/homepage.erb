@@ -1,8 +1,9 @@
 <ul>
+  <!-- Loops through all tasks in the database to display the task content -->
   <% @tasks.each do |task| %>
     <li class="task" id="task<%= task.id %>">
       <%= task.content %>
-    
+      <!-- 'mark done' link only shows if task.done = false -->
       <% if !task.done %>
         <a data-task-id="<%= task.id %>" href="/tasks/mark_as_done/<%= task.id %>" class="done_link">
           Mark Done
