@@ -1,3 +1,33 @@
 <h1>AJAX Atomics - 01</h1>
 
 <script type="text/javascript" src="/global.js"></script>
+
+<ol>
+   <li>
+     <b>
+       Why are you able to make requests to /info1 and /info2 even though there are no route handlers for those paths defined in app.rb?
+     </b>
+     <p>
+       Because of the req.open("get", "/info1"). It is a get request that specifies /info1 as the location of the file on the server. This takes the place of the get method in the app.rb file.
+     </p>
+   </li>
+
+   <li>
+     <b>
+       Why is the XHR object's request path /info1 instead of /public/info1?
+     </b>
+     <p>
+       The /public is assumed because it is where sinatra goes for static files.
+     </p>
+   </li>
+
+
+   <li>
+     <b>
+       Within the addEventListener function, what does <i>this</i> represent?
+     </b>
+     <p>
+       In JavaScript <i>this<i/i> always refers to the “owner” of the function we're executing, or rather, to the object that a function is a method of. In this case, the "owner" is XMLHttpRequest.
+     </p>
+   </li>
+ </ol>
